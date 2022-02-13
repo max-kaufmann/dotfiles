@@ -45,7 +45,7 @@ Overwrite ~/git/sm-dotfiles/config/p10k.zsh?
 Apply changes to ~/.zshrc?
 # Press n for NO 
 ```
-### Only if you are using singularity
+### Step 5 (Only necessary if using singularity)
 You then will want to paste the following command into the created p10k.zsh file so that when you are in a singularity image you will have an indicator in your terminal.
 
 ```
