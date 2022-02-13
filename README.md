@@ -3,7 +3,7 @@
 ### Step 1
 Clone this repo
 ```bash
-git clone git@gitlab1.speechmatics.io:aml/sm-dotfiles.git ~/git/dotfiles
+git clone git@github.com:er537/dotfiles.git ~/git/dotfiles
 ```
 you probably will also want to push this repo to your personal github
 
