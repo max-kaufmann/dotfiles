@@ -132,3 +132,7 @@ alias lm='ls -al |more'   # pipe through 'more'
 alias lr='ls -lR'         # recursive ls
 alias tree='tree -Csu'    # nice alternative to 'recursive ls'
 
+#--------------------------------------------------------------
+# Speechmatics
+#--------------------------------------------------------------
+alias vm="ssh ellenar@ellenar.dev-vms.speechmatics.io" #ssh to dev-vm
