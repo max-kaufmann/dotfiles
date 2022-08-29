@@ -17,7 +17,6 @@ alias cl="clear"
 alias rmd='rm -rf'
 alias cp='cp -i'
 alias mv='mv -i'
-alias mkdir='mkdir -p'
 
 # find/read files
 alias h='head'
