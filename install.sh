@@ -7,6 +7,8 @@ USAGE=$(cat <<-END
     OPTIONS:
         --tmux       install tmux
         --zsh        install zsh 
+        --delta      install git delta
+        --all        install everything
 
     If OPTIONS are passed they will be installed
     with apt if on linux or brew if on OSX
@@ -15,7 +17,9 @@ END
 
 zsh=false
 tmux=false
+delta=false
 force=false
+
 while (( "$#" )); do
     case "$1" in
         -h|--help)
@@ -24,6 +28,8 @@ while (( "$#" )); do
             zsh=true && shift ;;
         --tmux)
             tmux=true && shift ;;
+        --delta)
+            delta=true && shift ;;
         --force)
             force=true && shift ;;
         --) # end argument parsing
@@ -32,6 +38,12 @@ while (( "$#" )); do
             echo "Error: Unsupported flag $1" >&2 && exit 1 ;;
     esac
 done
+
+if [[ $all == true ]]; then
+    zsh=true
+    tmux=true
+    delta=true
+fi
 
 operating_system="$(uname -s)"
 case "${operating_system}" in
@@ -44,7 +56,8 @@ esac
 if [ $machine == "Linux" ]; then
     DOT_DIR=$(dirname $(realpath $0))
     [ $zsh == true ] && sudo apt-get install zsh
-    [ $tmux == true ] && sudo apt-get install tmux 
+    [ $tmux == true ] && sudo apt-get install tmux
+    [ $delta == true ] && $DOT_DIR/install_scripts/install_delta.sh 
 
 # Installing on mac with homebrew
 elif [ $machine == "Mac" ]; then
@@ -52,6 +65,7 @@ elif [ $machine == "Mac" ]; then
     DOT_DIR=$(dirname $(realpath $0))
     [ $zsh == true ] && brew install zsh
     [ $tmux == true ] && brew install tmux
+    [ $delta == true ] && brew install git-delta
 fi
 
 # Setting up oh my zsh and oh my zsh plugins

@@ -101,7 +101,7 @@ alias gstd="git stash drop"
 alias gstc="git stash clear"
 
 alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
-alias gpsup='git push --set-upstream origin $(git_current_branch)'
+alias gpp='git push --set-upstream origin $(git_current_branch)'
 
 #-------------------------------------------------------------
 # tmux
@@ -136,3 +136,8 @@ alias tree='tree -Csu'    # nice alternative to 'recursive ls'
 # Speechmatics
 #--------------------------------------------------------------
 alias vm="ssh ellenar@ellenar.dev-vms.speechmatics.io" #ssh to dev-vm
+
+#--------------------------------------------------------------
+# MER
+#--------------------------------------------------------------
+alias mkenv="source ~/env/venv_mer/bin/activate" #activate MER venv

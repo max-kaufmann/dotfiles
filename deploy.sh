@@ -36,6 +36,12 @@ echo "deploying on $LOC machine..."
 # Tmux setup
 echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
 
+# bashrc setup
+echo "source $DOT_DIR/config/bashrc.sh" > $HOME/.bashrc
+
+# git setup
+echo "source $DOT_DIR/config/gitconfig.remote" > $HOME/.gitconfig
+
 # Vimrc
 if [[ $VIM == "true" ]]; then
     echo "deploying .vimrc"
