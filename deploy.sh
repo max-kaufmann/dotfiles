@@ -39,8 +39,12 @@ echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
 # bashrc setup
 echo "source $DOT_DIR/config/bashrc.sh" > $HOME/.bashrc
 
-# git setup
-echo "source $DOT_DIR/config/gitconfig.remote" > $HOME/.gitconfig
+base_config=$(cat <<-END
+[include]
+    path = $DOT_DIR/gitconf/gitconfig.$LOC
+END
+)
+echo "$base_config" > $HOME/.gitconfig
 
 # Vimrc
 if [[ $VIM == "true" ]]; then

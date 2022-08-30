@@ -1,18 +1,5 @@
 [user]
-    email = ellenar@speechmatics.com
-    name = Ellena Reid
-[core]
-        editor = vim
-        pager = delta
-[credential]
-	    helper = /usr/local/share/gcm-core/git-credential-manager-core
-[credential "https://dev.azure.com"]
-	    useHttpPath = true
-[interactive]
-        diffFilter = delta --color-only
-[delta]
-        navigate = true
-[diff]
-        colorMoved = default
-[merge]
-        conflictstyle = diff3
+        email = ellenar@speechmatics.com
+        name = Ellena Reid
+[include]
+        path = /home/ellenar/git/dotfiles/config/git.config
