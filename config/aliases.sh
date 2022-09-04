@@ -139,4 +139,4 @@ alias vm="ssh ellenar@ellenar.dev-vms.speechmatics.io" #ssh to dev-vm
 #--------------------------------------------------------------
 # MER
 #--------------------------------------------------------------
-alias mkenv="source ~/env/venv_mer/bin/activate" #activate MER venv
+#alias mkenv="source ~/env/venv_mer/bin/activate" #activate MER venv
