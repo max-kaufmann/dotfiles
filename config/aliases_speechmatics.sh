@@ -6,6 +6,7 @@ HOST_IP_ADDR=$(hostname -I | awk '{ print $1 }') # This gets the actual ip addr
 TENSOR_BOARD_SIF="oras://singularity-master.artifacts.speechmatics.io/tensorboard:20210213"
 
 # Quick navigation add more here
+alias wh="cd ~/git/whisper-interpretability"
 alias a="cd ~/git/aladdin"
 alias a2="cd ~/git/aladdin2"
 alias a3="cd ~/git/aladdin3"
