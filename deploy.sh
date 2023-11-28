@@ -52,4 +52,8 @@ fi
 
 # zshrc setup
 echo "source $DOT_DIR/config/zshrc.sh" > $HOME/.zshrc
+
+# drop me into zsh shell by default
+echo "exec zsh" > $HOME/.bashrc
+
 zsh
