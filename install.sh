@@ -19,6 +19,7 @@ zsh=false
 tmux=false
 delta=false
 force=false
+all=false
 
 while (( "$#" )); do
     case "$1" in
@@ -55,8 +56,8 @@ esac
 # Installing on linux with apt
 if [ $machine == "Linux" ]; then
     DOT_DIR=$(dirname $(realpath $0))
-    [ $zsh == true ] && sudo apt-get install zsh
-    [ $tmux == true ] && sudo apt-get install tmux
+    [ $zsh == true ] && sudo yum install zsh
+    [ $tmux == true ] && sudo yum install tmux
     [ $delta == true ] && $DOT_DIR/install_scripts/install_delta.sh 
 
 # Installing on mac with homebrew
@@ -68,7 +69,7 @@ elif [ $machine == "Mac" ]; then
     [ $delta == true ] && brew install git-delta
 fi
 
-# Setting up oh my zsh and oh my zsh plugins
+#Install OhMyZSH
 ZSH=~/.oh-my-zsh
 ZSH_CUSTOM=$ZSH/custom
 if [ -d $ZSH ] && [ "$force" = "false" ]; then

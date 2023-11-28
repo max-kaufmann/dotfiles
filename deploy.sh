@@ -36,9 +36,6 @@ echo "deploying on $LOC machine..."
 # Tmux setup
 echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
 
-# bashrc setup
-echo "source $DOT_DIR/config/bashrc.sh" > $HOME/.bashrc
-
 base_config=$(cat <<-END
 [include]
     path = $DOT_DIR/gitconf/gitconfig.$LOC
