@@ -56,8 +56,8 @@ esac
 # Installing on linux with apt
 if [ $machine == "Linux" ]; then
     DOT_DIR=$(dirname $(realpath $0))
-    [ $zsh == true ] && sudo yum install zsh
-    [ $tmux == true ] && sudo yum install tmux
+    [ $zsh == true ] && sudo apt-get install zsh
+    [ $tmux == true ] && sudo apt-get install tmux
     [ $delta == true ] && $DOT_DIR/install_scripts/install_delta.sh 
 
 # Installing on mac with homebrew

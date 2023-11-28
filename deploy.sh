@@ -31,14 +31,13 @@ while (( "$#" )); do
 done
 
 
-echo "deploying on $LOC machine..."
 
 # Tmux setup
 echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
 
 base_config=$(cat <<-END
 [include]
-    path = $DOT_DIR/gitconf/gitconfig.$LOC
+    path = $DOT_DIR/gitconf/gitconfig
 END
 )
 echo "$base_config" > $HOME/.gitconfig
@@ -51,8 +50,4 @@ fi
 
 # zshrc setup
 echo "source $DOT_DIR/config/zshrc.sh" > $HOME/.zshrc
-# conifg/aliases_speechmatics.sh adds remote specific aliases and cmds
-[ $LOC = 'remote' ] &&  echo \
-    "source $DOT_DIR/config/aliases_speechmatics.sh" >> $HOME/.zshrc
-
 zsh
