@@ -21,10 +21,8 @@ Installation on a mac machine requires homebrew so install this [from here](http
 ### Step 3
 Deploy (e.g. source aliases for .zshrc, apply oh-my-zsh settings etc..)
 ```bash
-# Remote linux machine
-./deploy.sh  
-# Local mac machine
-./deploy.sh --local   
+# Deploy on linux
+./deploy.sh   
 ```
 
 ### Step 4
