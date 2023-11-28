@@ -110,8 +110,56 @@ alias lm='ls -al |more'   # pipe through 'more'
 alias lr='ls -lR'         # recursive ls
 alias tree='tree -Csu'    # nice alternative to 'recursive ls'
 
-#--------------------------------------------------------------
-# Speechmatics
-#--------------------------------------------------------------
-alias vm="ssh ellenar@ellenar.dev-vms.speechmatics.io" #ssh to dev-vm
+
+# -------------------------------------------------------------------
+# Tensorboard
+# -------------------------------------------------------------------
+
+alias tb="singularity exec $TENSOR_BOARD_SIF tensorboard --host=$HOST_IP_ADDR --reload_multifile true --logdir=."
+tblink () {
+  # Creates simlinks from specified folders to ~/tb/x where x is an incrmenting number
+  # and luanches tensorboard
+  # example: `tblink ./lm/20210824 ./lm/20210824_ablation ./lm/20210825_updated_data`
+  if [ "$#" -eq 0 ]; then
+    logdir=$(pwd)
+  else
+  # setup tensorboard directory
+    tbdir="$HOME/tb"
+    if [ -d "$tbdir" ]; then
+      last="$(printf '%s\n' $tbdir/* | sed 's/.*\///' | sort -g -r | head -n 1)"
+      new=$((last+1))
+      echo "last folder $last, new folder $new"
+      logdir="$tbdir/$new"
+    else
+      logdir="$tbdir/0"
+    fi
+    # softlink into tensorboard directory
+    for linkdir in "$@"; do
+      linkdir=$(rl $linkdir)
+      if [ ! -d $linkdir ]; then
+          echo "linkdir $linkdir does not exist"
+          return
+      fi
+      echo "linkdir: $linkdir"
+      mkdir -p $logdir
+      ln -s $linkdir $logdir
+    done
+  fi
+  echo "logdir: $logdir"
+  singularity exec "$TENSOR_BOARD_SIF" tensorboard --host=$HOST_IP_ADDR --reload_multifile true --logdir=$logdir
+}
+tbadd() {
+  # Add experiment folder to existing tensorboard directory (see tblink)
+  # example: `tbadd ./lm/20210825 25` will symlink ./lm/20210824 to ~/tb/25
+  if [ "$#" -eq 2 ]; then
+    tbdir="$HOME/tb"
+    linkdir=$(rl $1)
+    logdir=$tbdir/$2
+    ln -s $linkdir $logdir
+    echo "linkdir: $linkdir"
+    echo "logdir: $logdir"
+  else
+    echo "tbadd <exp_dir> <tb number>"
+  fi
+}
 
