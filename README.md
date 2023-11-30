@@ -27,5 +27,3 @@ Deploy (e.g. source aliases for .zshrc, apply oh-my-zsh settings etc..)
 
 ### Step 4
 This set of dotfiles uses the powerlevel10k theme for zsh, this makes your terminal look better and adds lots of useful features, e.g. env indicators, git status etc. This repo comes with a preconfigured powerlevel10k theme in [`./config/p10k.zsh`](./config/p10k.zsh) but you can reconfigure this by running `p10k configure` which will launch an interactive window. 
-  
-```
