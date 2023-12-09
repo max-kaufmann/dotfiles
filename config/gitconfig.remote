@@ -1,5 +1,0 @@
-[user]
-        email = ellenar@speechmatics.com
-        name = Ellena Reid
-[include]
-        path = /home/ellenar/git/dotfiles/config/git.config

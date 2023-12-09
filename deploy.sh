@@ -37,12 +37,12 @@ echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
 
 base_config=$(cat <<-END
 [include]
-    path = $DOT_DIR/gitconf/gitconfig
+    path = $DOT_DIR/config/gitconf/git.config
 END
 )
 echo "$base_config" > $HOME/.gitconfig
 
-git remote set-url origin git@personal.github.com:er537/dotfiles.git
+git remote set-url origin git@github.com-personal:er537/dotfiles.git
 
 # Vimrc
 if [[ $VIM == "true" ]]; then
