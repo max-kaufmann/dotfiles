@@ -37,7 +37,6 @@ Update ./config/gitconfig/gitconfig.personal and gitconfig.work to have your own
 ### Step 5
 Deploy (e.g. source aliases for .zshrc, apply oh-my-zsh settings etc..)
 ```bash
-# Deploy on linux
 ./deploy.sh   
 ```
 
