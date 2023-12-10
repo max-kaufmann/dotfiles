@@ -1,13 +1,14 @@
 # -------------------------------------------------------------------
 # work
 # -------------------------------------------------------------------
+alias work="cd ~/git/work"
 alias sum="cd ~/git/work/summit-science"
 alias audit="cd ~/git/work/audit"
 
 # -------------------------------------------------------------------
 # personal
 # -------------------------------------------------------------------
-
+alias me="cd ~/git/personal"
 alias cdg="cd ~/git"
 alias zrc="cd $DOT_DIR/zsh"
 alias dot="cd $DOT_DIR"
