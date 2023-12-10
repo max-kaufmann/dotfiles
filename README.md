@@ -19,7 +19,7 @@ Mac->System Setting->Keyboard->Keyboard Shortcuts->Modifier Keys->Change caps lo
 ### Step 2 (Use these dotfiles)
 Clone the repo
 ```bash
-git clone git@github.com:er537/dotfiles.git ~/git/dotfiles
+git clone github.com/AI-Safety-Institute/dotfiles/tree/master ~/git/dotfiles
 ```
 
 ### Step 3
