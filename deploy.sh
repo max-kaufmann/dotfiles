@@ -42,7 +42,6 @@ END
 )
 echo "$base_config" > $HOME/.gitconfig
 
-git remote set-url origin git@github.com-personal:er537/dotfiles.git
 
 # Vimrc
 if [[ $VIM == "true" ]]; then
