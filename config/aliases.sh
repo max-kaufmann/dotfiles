@@ -58,6 +58,7 @@ alias /='cd /'
 
 alias gc="git commit -m"
 alias gp="git push"
+alias guc="git add -u; gc"
 
 alias glog='git log --oneline --all --graph --decorate'
 

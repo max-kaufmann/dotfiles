@@ -15,3 +15,4 @@ source $CONFIG_DIR/p10k.zsh
 source $CONFIG_DIR/extras.sh
 
 
+
