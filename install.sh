@@ -33,6 +33,8 @@ while (( "$#" )); do
             delta=true && shift ;;
         --force)
             force=true && shift ;;
+	--all)
+	    all=true && shift;;
         --) # end argument parsing
             shift && break ;;
         -*|--*=) # unsupported flags
@@ -40,11 +42,15 @@ while (( "$#" )); do
     esac
 done
 
+
 if [[ $all == true ]]; then
     zsh=true
     tmux=true
     delta=true
 fi
+
+#TEMPORARY, AS DELTA DOESN'T WORK FOR ME
+delta=false
 
 operating_system="$(uname -s)"
 case "${operating_system}" in

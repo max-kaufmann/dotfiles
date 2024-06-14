@@ -1,4 +1,4 @@
-#! /bin/bash -eu
+:x
 set -euo pipefail
 # Install debians in $HOME/bin/
 MY_BIN=$HOME/bin
