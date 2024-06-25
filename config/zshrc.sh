@@ -14,5 +14,9 @@ source $CONFIG_DIR/aliases.sh
 source $CONFIG_DIR/p10k.zsh
 source $CONFIG_DIR/extras.sh
 
+#set history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
 
 

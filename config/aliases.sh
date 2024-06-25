@@ -28,8 +28,14 @@ alias mv='mv -i'
 alias h='head'
 alias t='tail'
 alias rl="readlink -f"
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+fd() {
+  find . -type d -name "*$1*"
+}
+
+ff() {
+  find . -type f -name "*$1*"
+}
+
 
 # storage
 alias du='du -kh' # file space
