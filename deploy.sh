@@ -53,6 +53,7 @@ fi
 echo "source $DOT_DIR/config/zshrc.sh" > $HOME/.zshrc
 
 # drop me into zsh shell by default
-echo "exec zsh" > $HOME/.bashrc
+echo 'if [[ $- == *i* ]];then exec zsh;fi' > $HOME/.bashrc
+
 
 zsh
