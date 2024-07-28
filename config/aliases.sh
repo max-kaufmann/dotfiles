@@ -66,6 +66,10 @@ alias gc="git commit -m"
 alias gp="git push"
 alias guc="git add -u; gc"
 
+gucp() {
+    git add -u; git commit -m "$1" ; git push
+}
+
 alias glog='git log --oneline --reverse --decorate'
 
 alias gf="git fetch"
