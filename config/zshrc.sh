@@ -17,6 +17,7 @@ source $CONFIG_DIR/extras.sh
 #set history
 export HISTSIZE=100000
 export SAVEHIST=100000
+ulimit -n 1048576 
 
 
 
