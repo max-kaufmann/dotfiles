@@ -187,3 +187,4 @@ tbadd() {
 # -------------------------------------------------------------------
 
 alias ppython="poetry run python"
+alias pythond="python -m debugpy --listen 5678 --wait-for-client"
