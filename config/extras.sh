@@ -60,6 +60,10 @@ zle -N git_prepare
 bindkey -r "^G"
 bindkey "^G" git_prepare
 
+export OKTA_PRINCIPAL=Maximillian.Kaufmann
+export INSPECT_TELEMETRY=aisitools.telemetry.send_telemetry
+export INSPECT_API_KEY_OVERRIDE=aisitools.api_key.override_api_key
+
 # Proxies
 export OPENAI_BASE_URL=https://openai-proxy.i.apps.ai-safety-institute.org.uk/v1
 export ANTHROPIC_BASE_URL=https://anthropic-proxy.i.apps.ai-safety-institute.org.uk
