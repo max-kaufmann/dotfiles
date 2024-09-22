@@ -67,7 +67,7 @@ alias gp="git push"
 alias guc="git add -u; gc"
 
 gucp() {
-    git add -u; git commit -m "$1" ; git push
+    git add -u; git commit -m "$1" ; git push $2
 }
 
 alias glog='git log --oneline --reverse --decorate'
