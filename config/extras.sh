@@ -78,3 +78,6 @@ export OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:2574
 
 # this is a shared key which will be rotated soon, once we have proxy-only keys per workstream
 export ANTHROPIC_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/shared/anthropic-api-key-utPKYR
+
+export EXPERIMENT_OUTPUT_DIRECTORY="$(git rev-parse --show-toplevel)/experiment_outputs/"
+
