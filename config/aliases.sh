@@ -66,11 +66,31 @@ alias gc="git commit -m"
 alias gp="git push"
 alias guc="git add -u; gc"
 
-gucp() {
-    git add -u; git commit -m "$1" ; git push $2
-}
-
 alias glog='git log --oneline --reverse --decorate'
+
+gucp() {
+    git add -u
+    git commit -m "$1"
+
+    # Attempt to push and capture the output and exit status
+    output=$(git push 2>&1)
+    push_status=$?
+
+    if [ $push_status -eq 0 ]; then
+        # Push succeeded
+        echo "$output"
+    else
+        # Check if the failure is due to no upstream branch
+        if echo "$output" | grep -q 'has no upstream branch'; then
+            # Set the upstream branch and push again
+            git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"
+        else
+            # Push failed for another reason
+            echo "$output"
+            return $push_status
+        fi
+    fi
+}
 
 alias gf="git fetch"
 alias gl="git pull"
