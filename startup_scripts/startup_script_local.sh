@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 
 cd /home/ubuntu
@@ -11,11 +9,11 @@ cd /home/ubuntu
 # To use this first create your GitHub SSH key and add it to your GitHub account (including configuring SSO to AISI org).
 # 1Password can help you do it (make sure you've set this extension up already in Chrome). Then store your GitHub secret
 # like this:
-# 
+#
 # cat << EOF >> ~/.ssh/id_ed25519 <your private key> EOF
-# 
+#
 # Then add to secrets manager:
-# 
+#
 # aws secretsmanager create-secret \
 #     --name /personal/alan/github \
 #     --secret-string "$(cat ~/.ssh/id_ed25519)" \
@@ -23,8 +21,8 @@ cd /home/ubuntu
 
 
 # Setup username and email
-git config --global user.name "Alan Cooney"
-git config --global user.email "176403005+alan-cooney-dsit@users.noreply.github.com"
+git config --global user.name "Max Kaufmann"
+git config --global user.email "maximillian.kaufmann@dsit.gov.uk"
 
 # Get GitHub SSH key
 aws secretsmanager get-secret-value --secret-id /personal/Maximillian.Kaufmann/github-key --query SecretString --output text > ~/.ssh/id_rsa
@@ -39,13 +37,3 @@ cd dotfiles; ./install.sh --zsh; ./install.sh --all
 
 
 sudo groupadd docker
-sudo usermod -aG docker ubuntu
-newgrp docker
-######################
-# Clone repositories #
-######################
-
-
-################
-# Add API keys #
-################
