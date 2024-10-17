@@ -27,12 +27,6 @@ while (( "$#" )); do
             echo "$USAGE" && exit 1 ;;
         --zsh)
             zsh=true && shift ;;
-        --tmux)
-            tmux=true && shift ;;
-        --delta)
-            delta=true && shift ;;
-        --force)
-            force=true && shift ;;
 	--all)
 	    all=true && shift;;
         --) # end argument parsing
@@ -45,12 +39,8 @@ done
 
 if [[ $all == true ]]; then
     zsh=true
-    tmux=true
-    delta=true
 fi
 
-#TEMPORARY, AS DELTA DOESN'T WORK FOR ME
-delta=false
 
 operating_system="$(uname -s)"
 case "${operating_system}" in
@@ -63,16 +53,12 @@ esac
 if [ $machine == "Linux" ]; then
     DOT_DIR=$(dirname $(realpath $0))
     [ $zsh == true ] && sudo apt-get install zsh
-    [ $tmux == true ] && sudo apt-get install tmux
-    [ $delta == true ] && $DOT_DIR/install_scripts/install_delta.sh 
 
 # Installing on mac with homebrew
 elif [ $machine == "Mac" ]; then
     brew install coreutils  # Mac won't have realpath before coreutils installed
     DOT_DIR=$(dirname $(realpath $0))
     [ $zsh == true ] && brew install zsh
-    [ $tmux == true ] && brew install tmux
-    [ $delta == true ] && brew install git-delta
 fi
 
 #Install OhMyZSH

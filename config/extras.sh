@@ -60,6 +60,8 @@ zle -N git_prepare
 bindkey -r "^G"
 bindkey "^G" git_prepare
 
+export PATH=$PATH:/home/ubuntu/.local/bin
+
 export OKTA_PRINCIPAL=Maximillian.Kaufmann
 export INSPECT_TELEMETRY=aisitools.telemetry.send_telemetry
 export INSPECT_API_KEY_OVERRIDE=aisitools.api_key.override_api_key
@@ -80,4 +82,5 @@ export OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:2574
 export ANTHROPIC_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/shared/anthropic-api-key-utPKYR
 
 export EXPERIMENT_OUTPUT_DIRECTORY="$(git rev-parse --show-toplevel)/experiment_outputs/"
+
 
