@@ -33,7 +33,7 @@ git clone git@github.com:AI-Safety-Institute/agent_framework.git
 git clone git@github.com:AI-Safety-Institute/inspect_ai.git
 git clone git@github.com:AI-Safety-Institute/AS-Evals.git
 git clone git@github.com:AI-Safety-Institute/dotfiles.git
-cd dotfiles; yes | ./install.sh --zsh; ./install.sh --all
+cd dotfiles; yes | ./install.sh --zsh; yes | ./deply.sh 
 
 
 sudo groupadd docker
