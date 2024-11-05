@@ -83,4 +83,4 @@ export ANTHROPIC_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:2
 
 export EXPERIMENT_OUTPUT_DIRECTORY="$(git rev-parse --show-toplevel)/experiment_outputs/"
 
-
+export INSPECT_LOG_FORMAT=eval
