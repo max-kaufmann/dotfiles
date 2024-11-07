@@ -37,4 +37,5 @@ sudo groupadd docker
 
 cd dotfiles; git checkout max_dotfiles; yes | ./install.sh --zsh; ./deploy.sh 
 poetry config virtualenvs.in-project true
+sudo apt install gh
 
