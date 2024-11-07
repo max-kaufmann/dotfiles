@@ -33,7 +33,8 @@ git clone git@github.com:AI-Safety-Institute/agent_framework.git
 git clone git@github.com:AI-Safety-Institute/inspect_ai.git
 git clone git@github.com:AI-Safety-Institute/AS-Evals.git
 git clone git@github.com:AI-Safety-Institute/dotfiles.git
-cd dotfiles; yes | ./install.sh --zsh; yes | ./deploy.sh 
-
-
 sudo groupadd docker
+
+cd dotfiles; git checkout max_dotfiles; yes | ./install.sh --zsh; ./deploy.sh 
+poetry config virtualenvs.in-project true
+
