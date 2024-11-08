@@ -207,4 +207,27 @@ tbadd() {
 # -------------------------------------------------------------------
 
 alias ppython="poetry run python"
-alias pythond="python -m debugpy --listen 5678 --wait-for-client"
+# Define the pythond function
+pythond() {
+    # Attempt to get the top-level directory of the Git repository
+    git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+
+    # Check if the command was successful
+    if [ $? -ne 0 ]; then
+        echo "Error: This command must be run inside a Git repository."
+        return 1
+    fi
+
+    # Get the current working directory
+    current_dir=$(pwd)
+
+    # Compare the current directory with the Git root directory
+    if [ "$git_root" != "$current_dir" ]; then
+        echo "Error: Please run this command from the top-level directory of your Git repository."
+        return 1
+    fi
+
+    # Run the original command
+    python -m debugpy --listen 5678 --wait-for-client "$@"
+}
+
