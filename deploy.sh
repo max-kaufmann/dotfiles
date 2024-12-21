@@ -18,7 +18,7 @@ VIM="false"
 while (( "$#" )); do
     case "$1" in
         -h|--help)
-            echo "$USAGE" && exit 1 ;;
+            echo "xq$USAGE" && exit 1 ;;
         --local)
             LOC="local" && shift ;;
         --vim)
