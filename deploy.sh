@@ -49,8 +49,10 @@ if [[ $VIM == "true" ]]; then
     echo "source $DOT_DIR/config/vimrc" > $HOME/.vimrc
 fi
 
-# zshrc setup
-echo "source $DOT_DIR/config/zshrc.sh" > $HOME/.zshrc
+# prepend the sourcing of zshrc to the file, so that we don't delete it every time 
+if ! grep -q "source $DOT_DIR/config/zshrc.sh" $HOME/.zshrc; then
+    echo "source $DOT_DIR/config/zshrc.sh" | cat - $HOME/.zshrc > temp && mv temp $HOME/.zshrc
+fi
 
 # drop me into zsh shell by default
 echo 'if [[ $- == *i* ]];then exec zsh;fi' > $HOME/.bashrc
