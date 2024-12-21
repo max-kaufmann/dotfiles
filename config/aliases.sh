@@ -219,11 +219,11 @@ pythond() {
     fi
 
     # Get the current working directory
-    current_dir=$(pwd)
+    current_dir=$(pwd -P)
 
     # Compare the current directory with the Git root directory
     if [ "$git_root" != "$current_dir" ]; then
-        echo "Error: Please run this command from the top-level directory of your Git repository."
+        echo "Error: Please run this command from the top-level directory of your Git repository. Otherwise VSCode can't locate the files you are debugging."
         return 1
     fi
 
