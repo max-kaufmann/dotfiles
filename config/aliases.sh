@@ -228,6 +228,7 @@ pythond() {
     fi
 
     # Run the original command
-    python -m debugpy --listen 5678 --wait-for-client "$@"
+    python -m debugpy --listen 0.0.0.0:5678 --wait-for-client "$@"
+
 }
 

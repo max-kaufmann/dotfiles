@@ -20,4 +20,3 @@ export SAVEHIST=100000
 ulimit -n 65536
 
 
-
