@@ -2,7 +2,6 @@
 # zsh extra settings
 #-------------------------------------------------------------
 
-setopt RM_STAR_WAIT
 setopt NO_BEEP
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_SPACE
