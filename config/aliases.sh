@@ -64,7 +64,7 @@ alias /='cd /'
 
 alias gc="git commit -m"
 alias gp="git push"
-alias guc="git add -u; gc"
+alias guc="git add -u; gc -m"
 
 alias glog='git log --oneline --reverse --decorate'
 
