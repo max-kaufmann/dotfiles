@@ -211,24 +211,29 @@ alias ppython="poetry run python"
 pythond() {
     # Attempt to get the top-level directory of the Git repository
     git_root=$(git rev-parse --show-toplevel 2>/dev/null)
-
     # Check if the command was successful
     if [ $? -ne 0 ]; then
         echo "Error: This command must be run inside a Git repository."
         return 1
     fi
-
     # Get the current working directory
     current_dir=$(pwd -P)
-
     # Compare the current directory with the Git root directory
     if [ "$git_root" != "$current_dir" ]; then
         echo "Error: Please run this command from the top-level directory of your Git repository. Otherwise VSCode can't locate the files you are debugging."
         return 1
     fi
 
-    # Run the original command
-    python -m debugpy --listen 0.0.0.0:5678 --wait-for-client "$@"
-
+    # Default port
+    port=5678
+    
+    # Check if the first argument is --port
+    if [ "${1}" = "--port" ] && [ -n "${2}" ]; then
+        port="${2}"
+        # Remove the first two arguments (--port and the port number)
+        shift 2
+    fi
+    
+    # Run the command with the specified or default port
+    python -m debugpy --listen "0.0.0.0:${port}" --wait-for-client "$@"
 }
-
