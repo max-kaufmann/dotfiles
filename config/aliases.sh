@@ -237,3 +237,6 @@ pythond() {
     # Run the command with the specified or default port
     python -m debugpy --listen "0.0.0.0:${port}" --wait-for-client "$@"
 }
+
+alias rm='echo "This is not the command you are looking for."; false'
+alias trm="trash-put"
