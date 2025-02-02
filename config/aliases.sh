@@ -238,5 +238,13 @@ pythond() {
     python -m debugpy --listen "0.0.0.0:${port}" --wait-for-client "$@"
 }
 
-alias rm='echo "This is not the command you are looking for."; false'
+# Used to create screen sessions which are automatically killed after a job ends.
+alias salloc-tmux='SESS_NAME="slurm_${SLURM_JOB_ID:-0}_$(openssl rand -hex 4)"; \
+  trap "tmux kill-session -t ${SESS_NAME}" EXIT; \
+  tmux new-session -s "${SESS_NAME}"'
+
+alias salloc-screen='SESS_NAME="slurm_${SLURM_JOB_ID:-0}_$(openssl rand -hex 4)"; \
+  trap "screen -S ${SESS_NAME} -X quit" EXIT; \
+  screen -S "${SESS_NAME}"'
+
 alias trm="trash-put"
