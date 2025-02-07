@@ -5,3 +5,5 @@ export PATH=/pkgs/cuda-12.4/bin/:$PATH
 export PATH=/mfs1/u/max/.conda/base_python/bin:$PATH
 
 alias trm='\rm'
+export UV_CACHE_DIR="mfs1/u/max/.cache/uv/"
+

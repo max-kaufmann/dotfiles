@@ -61,26 +61,3 @@ bindkey -r "^G"
 bindkey "^G" git_prepare
 
 export PATH=$PATH:/home/ubuntu/.local/bin
-
-export OKTA_PRINCIPAL=Maximillian.Kaufmann
-export INSPECT_TELEMETRY=aisitools.telemetry.send_telemetry
-export INSPECT_API_KEY_OVERRIDE=aisitools.api_key.override_api_key
-
-# Proxies
-export OPENAI_BASE_URL=https://openai-proxy.i.apps.ai-safety-institute.org.uk/v1
-export ANTHROPIC_BASE_URL=https://anthropic-proxy.i.apps.ai-safety-institute.org.uk
-
-# OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/autonomous-systems/openai-api-key-WFCPRs
-# OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/chembio/openai-api-key-O5ud2z
-# OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/cyber/openai-api-key-wSM2vE
-# OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/predictive-evals/openai-api-key-L5484B
-# OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/safeguards/openai-api-key-5w3oug
-# OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/societal-impacts/openai-api-key-4MDsTO
-export OPENAI_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/platform/openai-api-key-IDb4dv
-
-# this is a shared key which will be rotated soon, once we have proxy-only keys per workstream
-export ANTHROPIC_API_KEY=aws-secretsmanager://arn:aws:secretsmanager:eu-west-2:257469545531:secret:/aisi/shared/anthropic-api-key-utPKYR
-
-export EXPERIMENT_OUTPUT_DIRECTORY="$(git rev-parse --show-toplevel)/experiment_outputs/"
-
-export INSPECT_LOG_FORMAT=eval
