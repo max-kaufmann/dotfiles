@@ -248,3 +248,5 @@ alias salloc-screen='SESS_NAME="slurm_${SLURM_JOB_ID:-0}_$(openssl rand -hex 4)"
   screen -S "${SESS_NAME}"'
 
 alias trm="trash-put"
+
+alias ruffcf="ruff check --fix .; ruff format"

@@ -8,4 +8,14 @@ alias trm='\rm'
 export UV_CACHE_DIR="mfs1/u/max/.cache/uv/"
 mkdir -p /tmp/${USER}_runtime
 export XDG_RUNTIME_DIR=/tmp/${USER}_runtime
+export HF_HOME="/mfs1/u/max/.cache/huggingface"
 
+export NVM_DIR="/mfs1/u/max/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+oocr () {
+	cd /mfs1/u/max/oocr-influence/
+	source ./.venv/bin/activate
+
+}
