@@ -19,4 +19,3 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 ulimit -n 65536
 
-
