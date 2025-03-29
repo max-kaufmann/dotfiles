@@ -238,6 +238,13 @@ pythond() {
     python -m debugpy --listen "0.0.0.0:${port}" --wait-for-client "$@"
 }
 
+sbatch-prompted (){
+  # get job array size from user
+  read -p "Enter the job array size: " job_array_size
+
+  sbatch --array=1-${job_array_size} "$@"
+}
+
 # Used to create screen sessions which are automatically killed after a job ends.
 alias salloc-tmux='SESS_NAME="slurm_${SLURM_JOB_ID:-0}_$(openssl rand -hex 4)"; \
   trap "tmux kill-session -t ${SESS_NAME}" EXIT; \

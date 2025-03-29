@@ -24,3 +24,7 @@ open-r1 () {
         cd /mfs1/u/max/open-r1/
 	source ./.venv/bin/activate
 }
+
+dotfiles () {
+	cd ~/dotfiles/
+}
